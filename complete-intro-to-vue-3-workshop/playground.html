@@ -9,10 +9,11 @@
   <body>
     <h1>Hello</h1>
     <div id="app">
-      <h1>Counter</h1>
+      <h1>{{displayTitle}}</h1>
       <p>{{count}}</p>
       <button v-on:click="incrementCount">Increment Count</button>
       <h1>{{incrementAmount}}</h1>
+      <h2>{{optimizeIncrementAmount}}</h2>
       <div>
         <label for="increment"> Increment by:</label>
         <input type="number" v-model="incrementAmount" />
@@ -36,6 +37,7 @@
         data() {
           return {
             count: 10,
+            counterTitle: "This is the title",
             incrementAmount: 8,
             message: "Hello it works!",
             listOfnumbers: [
@@ -67,14 +69,35 @@
             ],
           };
         },
+        // about managing darta, triggering actions
+        computed: {
+          displayTitle() {
+            if (this.count > 20) {
+              return "This is the title";
+            } else return "New Title";
+          },
+          optimizeIncrementAmount() {
+            return this.displayTitle.length * this.incrementAmount;
+          },
+        },
         methods: {
           // changeIncrementAmount(event) {
           //   this.incrementAmount = Number(event.target.value);
           // },
 
           incrementCount() {
-            this.count += this.incrementAmount;
+            this.count += this.optimizeIncrementAmount;
             this.incrementAmount = "";
+          },
+        },
+        // for a specific api call
+        watch: {
+          // calling the count function as needed to be watched
+          count(newValue) {
+            console.log(newValue);
+            if (newValue > 30) {
+              this.counterTitle = "New Title";
+            }
           },
         },
       });
