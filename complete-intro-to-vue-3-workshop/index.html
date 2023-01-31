@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avatar: The way of water</title>
+  </head>
+  <body>
+    <div id="app">
+      <p v-if="characterList.length===0">There are no characters</p>
+      <ul v-else>
+        <div>
+          <li v-for="character in characterList">
+            <p>{{character.name}}</p>
+            <button @click="favoriteCharacter(character.name)">Favorite</button>
+            <!--Parameter should be same for passing (character) -->
+          </li>
+        </div>
+      </ul>
+      <h2>Favorite Character</h2>
+      <ul v-if="favoriteList.length>0">
+        <li v-for="character in favoriteList">{{character}}</li>
+      </ul>
+      <p v-else>No favorite character</p>
+      <h2>New Character</h2>
+      <pre>{{newCharacter}} </pre>
+      <label for="newCharacter">Add a new character: </label>
+      <input
+        type="text"
+        v-model="newCharacter.name"
+        @keyup.enter="addNewCharacter"
+      />
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+      Vue.createApp({
+        data: () => ({
+          characterList: [
+            { name: "Avatar" },
+            { name: "Man" },
+            { name: "Alien" },
+            { name: "Sky People" },
+          ],
+          favoriteList: [],
+          newCharacter: {
+            name: "",
+          },
+        }),
+        methods: {
+          favoriteCharacter(character) {
+            this.favoriteList.push(character);
+          },
+          addNewCharacter() {
+            this.characterList.push(this.newCharacter);
+            this.newCharacter = { name: "" };
+          },
+        },
+      }).mount("#app");
+    </script>
+  </body>
+</html>
