@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Avatar: The way of water</title>
-  </head> 
+  </head>
   <body>
     <div id="app">
       <p v-if="characterList.length===0">There are no characters</p>
@@ -41,7 +41,8 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
       Vue.createApp({
-        data: () => ({
+        data() {
+          return{
           characterList: [
             { name: "Avatar", element: ["air", "water", "earth", "fire"] },
             { name: "Man", element: ["air", "water"] },
@@ -52,7 +53,9 @@
           newCharacter: {
             name: "",
           },
-        }),
+        },
+      }
+        });
         computed: {
           benderStatistics() {
             const elements = ["air", "water", "earth", "fire"];

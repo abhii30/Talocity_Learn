@@ -9,24 +9,7 @@
   <body>
     <h1>Hello</h1>
     <div id="app">
-      <h1>{{displayTitle}}</h1>
-      <p>{{count}}</p>
-      <button v-on:click="incrementCount">Increment Count</button>
-      <h1>{{incrementAmount}}</h1>
-      <h2>{{optimizeIncrementAmount}}</h2>
-      <div>
-        <label for="increment"> Increment by:</label>
-        <input type="number" v-model="incrementAmount" />
-      </div>
-      <hr />
-      <p v-if="message.length%2 === 0">Even : {{message.toUpperCase()}}</p>
-      <p v-else>Odd :{{message}}</p>
-      <ul v-for="item in listOfnumbers">
-        <li>{{ item.id }}</li>
-        <ul>
-          <li v-for="number in item.list">{{number }}</li>
-        </ul>
-      </ul>
+      
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script>
