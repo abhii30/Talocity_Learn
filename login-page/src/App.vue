@@ -5,11 +5,20 @@ export default {
       document.getElementById("rec").style.left = "0";
       document.getElementById("btn").style.left = "50%";
       document.getElementById("can").style.left = "-101%";
+      document.getElementById("canPass").style.left = "-101%";
     },
     candidate() {
       document.getElementById("can").style.left = "0%";
       document.getElementById("btn").style.left = "0%";
       document.getElementById("rec").style.left = "101%";
+    },
+    candidatePass() {
+      document.getElementById("canPass").style.left = "0%";
+      document.getElementById("can").style.left = "101%";
+    },
+    candidatePhone() {
+      document.getElementById("can").style.left = "0%";
+      document.getElementById("canPass").style.left = "-101%";
     },
   },
 };
@@ -38,7 +47,28 @@ export default {
           </div>
           <button type="submit" class="submit-btn">Next</button>
           <span
-            >Need to login with password? <a href="">Enter Password</a></span
+            >Need to login with password?
+            <a href="#" @click="candidatePass">Enter Password</a></span
+          >
+        </form>
+      </div>
+      <div class="candidatePass" id="canPass">
+        <form class="input-group" action="" method="">
+          <vue-tel-input v-bind=""></vue-tel-input>
+          <label for="cmob">Mobile Number</label>
+          <div class="mobile">
+            <input type="zipcode" placeholder=" +91" id="zip" />
+            <input type="text" placeholder="1234567890" id="cmob" />
+          </div>
+          <div class="input-list">
+            <label for="password">Password</label>
+            <input type="password" placeholder="Password" />
+          </div>
+          <span> <a href="#" @click="candidatePhone">Forgot Password?</a></span>
+          <button type="submit" class="submit-btn">Login</button>
+          <span
+            >Need to login with OTP / Verification Pin?
+            <a href="#" @click="candidatePhone">Enter Mobile Number</a></span
           >
         </form>
       </div>
@@ -108,6 +138,13 @@ h2 {
   padding: 0 3vh;
   transition: 0.5s;
 }
+.candidatePass {
+  position: absolute;
+  width: 100%;
+  left: -101%;
+  padding: 0 3vh;
+  transition: 0.5s;
+}
 
 .recruiter {
   position: absolute;
@@ -142,6 +179,7 @@ input {
 .mobile {
   display: flex;
   flex-direction: row;
+  margin-bottom: 2vh;
 }
 #zip {
   height: 5vh;
@@ -165,7 +203,7 @@ input {
   height: 5vh;
   background-color: burlywood;
   border-radius: 5vh;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 span {
   margin-top: 3%;
