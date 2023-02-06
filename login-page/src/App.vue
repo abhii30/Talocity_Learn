@@ -121,12 +121,11 @@ label {
 }
 #btn {
   position: absolute;
-  z-index: 0;
   top: 0;
   left: 0;
   height: 100%;
   width: 50%;
-  background: linear-gradient(to right, rgb(118, 67, 67), rgb(49, 145, 103));
+  background: linear-gradient(to right, rgb(202, 131, 131), rgb(49, 145, 103));
   border-radius: 5vh;
   transition: 0.5s;
 }
