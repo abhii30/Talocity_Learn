@@ -99,6 +99,7 @@ h2 {
   border: none;
   background: transparent;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .candidate {
   position: absolute;
