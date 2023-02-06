@@ -73,9 +73,9 @@ main {
 .form-box {
   position: relative;
   width: 40vh;
-  height: 50vh;
+  height: 60vh;
   background-color: azure;
-  padding: 3vh;
+  padding: 5vh 3vh;
   overflow: hidden;
   text-align: center;
 }
@@ -86,7 +86,6 @@ h2 {
 .button-box {
   position: relative;
   height: 5vh;
-  background-color: rgb(170, 216, 239);
   position: relative;
   box-shadow: 0 0 10px 5px rgb(199, 199, 199);
   border-radius: 5vh;
@@ -122,6 +121,7 @@ label {
 }
 #btn {
   position: absolute;
+  z-index: 0;
   top: 0;
   left: 0;
   height: 100%;
