@@ -34,7 +34,7 @@ export default {
   </ul>
 </template>
 
-<style scoped>
+<style scoped> 
 h2 {
   color: rgb(36, 52, 46);
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;

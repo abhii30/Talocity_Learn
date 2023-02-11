@@ -1,19 +1,25 @@
 <script>
 import BenderStats from "./components/BenderStats.vue";
+import UserCard from "./components/userCard.vue";
 import { ref } from "vue";
 // import HelloWorld from './components/HelloWorld.vue'
 // import TheWelcome from './components/TheWelcome.vue'
-const colorChange = ref("black");
 
 export default {
   data() {
     return {
+      colorChange: "black",
       characterList: [
         { name: "Avatar", element: ["air", "water", "earth", "fire"] },
         { name: "Man", element: ["air", "water"] },
         { name: "Alien", element: ["fire", "earth"] },
         { name: "Sky People", element: ["air"] },
       ],
+      userData: {
+        name: "Abhi",
+        roll: "12016136",
+        college: "Nit kurukshetra",
+      },
       favoriteList: [],
       newCharacter: {
         name: "",
@@ -29,13 +35,12 @@ export default {
       this.newCharacter = { name: "" };
     },
   },
-  components: { BenderStats },
+  components: { BenderStats, UserCard },
 };
 </script>
 
 <template>
-  <div>
-    <h2>{{ colorChange }}</h2>
+  <div :class="wrapper">
     <p v-if="characterList.length === 0">There are no characters</p>
     <ul v-else>
       <div>
@@ -51,7 +56,7 @@ export default {
         </li>
       </div>
     </ul>
-
+    <UserCard :name="userData.name" :roll="userData.roll" />
     <h2>Favorite Character</h2>
     <ul v-if="favoriteList.length > 0">
       <li
@@ -75,10 +80,8 @@ export default {
 </template>
 
 <style>
-html {
-  padding: 2rem;
-  box-sizing: border-box;
-  background-color: bisque;
+.button {
+  background-color: aqua;
 }
 h2 {
   color: blue;
