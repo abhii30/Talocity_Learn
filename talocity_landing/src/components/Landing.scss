@@ -1,0 +1,68 @@
+.landing {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  .landingLeft,
+  .landingRight {
+    width: 50%;
+    position: relative;
+    // height: 100vh;
+    text-align: center;
+    .loginContainer {
+      display: flex;
+      height: 100vh;
+      font-family: "Inter";
+      font-style: normal;
+    }
+    .loginForm {
+      width: 60%;
+      margin: auto;
+      .inputContainer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 0rem;
+        label {
+          text-align: left;
+        }
+        input {
+          background: #b3b3d3;
+          border-radius: 8px;
+          height: 36px;
+          border: none;
+          padding: 0 0.7rem;
+        }
+        input:focus {
+          outline: 1px solid #10cccb;
+        }
+      }
+      button {
+        background: #000000;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 14px;
+        color: white;
+        padding: 2vh;
+        width: 100%;
+      }
+    }
+    p{
+        margin: 2vh auto;
+    }
+    a {
+      text-decoration: none;
+      color: #10cccb;
+    }
+  }
+}
+
+.labelContainer {
+  display: flex;
+  .labelLeft,
+  .labelRight {
+    width: 50%;
+    a {
+      float: right;
+    }
+  }
+}
