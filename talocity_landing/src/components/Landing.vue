@@ -12,11 +12,19 @@ export default {
   methods: {
     getBrand() {
       axios
-        .get("https://run.mocky.io/v3/e78b1180-160a-4ce6-911e-cd16d0823a10")
+        .get("https://run.mocky.io/v3/6fe4aa91-c548-4a2b-85af-c0eae408873f")
         .then((res) => {
           this.brand = res.data;
           console.log(this.brand);
         });
+    },
+  },
+  computed: {
+    btnStyles() {
+      return {
+        "background-color": this.brand.colorBackground,
+        color: this.brand.colorText,
+      };
     },
   },
 };
@@ -109,13 +117,7 @@ export default {
 
             <input type="password" id="password" />
           </div>
-          <button
-            style={{
-            background:`${brand.colorBackground}`}}
-            type="submit"
-          >
-            Login
-          </button>
+          <button :style="btnStyles" type="submit">Login</button>
           <p>Don't have an account? <a href="#">Contact Sales</a></p>
         </form>
       </div>
@@ -123,6 +125,6 @@ export default {
   </div>
 </template>
 
-<style lang="scss" :brand="brand">
+<style lang="scss">
 @import "./Landing.scss";
 </style>
