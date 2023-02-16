@@ -58,7 +58,7 @@ export default {
     </ul>
     <UserCard :name="userData.name" :roll="userData.roll" />
     <h2>Favorite Character</h2>
-    <ul v-if="favoriteList.length > 0">
+    <ul v-if="favoriteList.length > 0"> 
       <li
         v-for="(character, index) in favoriteList"
         :key="`character-fav-${index}`"

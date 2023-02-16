@@ -1,4 +1,26 @@
-<script></script>
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      brand: {},
+    };
+  },
+  mounted() {
+    this.getBrand();
+  },
+  methods: {
+    getBrand() {
+      axios
+        .get("https://run.mocky.io/v3/e78b1180-160a-4ce6-911e-cd16d0823a10")
+        .then((res) => {
+          this.brand = res.data;
+          console.log(this.brand);
+        });
+    },
+  },
+};
+</script>
 
 <template>
   <div class="landing">
@@ -68,9 +90,11 @@
     <div class="landingRight">
       <div class="loginContainer">
         <form action="" class="loginForm">
-          <img src="./icons/Logo_Talocity.png" alt="" />
+          <img :src="brand.logo" alt="" />
           <h2>Login</h2>
-          <h3>Welcome back</h3>
+          <h3>
+            <span>{{ brand.brand }}</span> Welcome back
+          </h3>
           <div class="inputContainer">
             <label for="Email">Email Address </label>
             <input type="email" id="Email" />
@@ -85,7 +109,13 @@
 
             <input type="password" id="password" />
           </div>
-          <button type="submit">Login</button>
+          <button
+            style={{
+            background:`${brand.colorBackground}`}}
+            type="submit"
+          >
+            Login
+          </button>
           <p>Don't have an account? <a href="#">Contact Sales</a></p>
         </form>
       </div>
@@ -93,6 +123,6 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" :brand="brand">
 @import "./Landing.scss";
 </style>

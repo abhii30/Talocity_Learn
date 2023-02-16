@@ -116,7 +116,6 @@ h2 {
 .button-box {
   position: relative;
   height: 5vh;
-  position: relative;
   box-shadow: 0 0 10px 5px rgb(199, 199, 199);
   border-radius: 5vh;
   /* display: flex; */

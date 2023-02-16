@@ -1,38 +1,28 @@
 :root {
-  --color-light: #000000;
-  --color-dark: #6f80ff;
-  --text-light: #ffffff;
-  --text-dark: #000000;
-  --input-light: #F3F3F4;
-  --input-dark: #ffffff;
-}
-
-:root {
   --background-button: var(--color-light);
   --text-button: var(--text-light);
   --background-input: var(--input-light);
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-button: var(--color-dark);
-    --text-button: var(--text-dark);
-    --background-input: var(--input-dark);
-  }
+:root.dark-theme {
+  --background-button: var(--color-dark);
+  --text-button: var(--text-dark);
+  --background-input: var(--input-dark);
 }
 
 .landing {
+  // position: relative;
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 90vh;
   .landingLeft,
   .landingRight {
     width: 50%;
-    position: relative;
+    // position: relative;
     // height: 100vh;
     text-align: center;
     .loginContainer {
       display: flex;
-      height: 100vh;
+      height: 90vh;
       font-family: "Inter";
       font-style: normal;
       font-weight: 500;
@@ -40,6 +30,9 @@
     .loginForm {
       width: 60%;
       margin: auto;
+      img {
+        width: 30%;
+      }
       h2 {
         font-weight: 700;
       }
@@ -98,7 +91,7 @@
 
 .landingLeft {
   display: flex;
-  padding: 8%;
+  padding: 2% 4% 6% 8%;
   .col3 {
     width: 33.3%;
     .box1 {
@@ -123,4 +116,34 @@
   width: 100%;
   height: 100%;
   margin: auto;
+}
+$breakpoint-tablet: 769px;
+$breakpoint-mobileL: 426px;
+@media (max-width: $breakpoint-tablet) {
+  .landing {
+    .landingRight {
+      .loginContainer {
+        .loginForm {
+          width: 80%;
+        }
+      }
+    }
+    .landingLeft {
+      padding: 12% 1% 8% 6%;
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobileL) {
+  .landing {
+    flex-direction: column;
+    width: 100%;
+    .landingLeft,
+    .landingRight {
+      width: 100%;
+    }
+    .landingLeft {
+      display: none;
+    }
+  }
 }
