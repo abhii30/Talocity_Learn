@@ -1,4 +1,5 @@
 <script>
+import { RouterLink, RouterView } from "vue-router";
 import Landing from "./components/Landing.vue";
 import ThemeButton from "./components/ThemeButton.vue";
 export default {
@@ -10,12 +11,12 @@ export default {
 </script>
 
 <template>
-  <ThemeButton />
-  <Landing />
+  <!-- <nav>
+    <RouterLink to="/">Home</RouterLink>
+    <RouterLink to="/about">About</RouterLink>
+  </nav> -->
+  <!-- <ThemeButton /> -->
+  <!-- <Landing /> -->
+  <RouterView />
 </template>
-
-<style>
-template {
-  /* position: absolute; */
-}
-</style>
+<style></style>

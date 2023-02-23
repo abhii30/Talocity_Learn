@@ -11,7 +11,7 @@
   --color-dark: #6f80ff;
   --text-light: #ffffff;
   --text-dark: #000000;
-  --input-light: #f3f3f4;
+  --input-light: #ffffff;
   --input-dark: #ffffff;
 }
 
@@ -41,7 +41,7 @@
 }
 
 body {
-  min-height: 100vh;
+  min-height: 100%;
   color: var(--color-text);
   background: var(--color-background);
   transition: 0.5s;
