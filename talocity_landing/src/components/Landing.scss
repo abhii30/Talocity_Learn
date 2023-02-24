@@ -177,7 +177,7 @@ a {
 }
 .landingRight {
   position: relative;
-  overflow: hidden; 
+  overflow: hidden;
   .loginContainer {
     position: absolute;
     width: 100%;
@@ -198,13 +198,14 @@ a {
   .salesContainer {
     width: 100%;
     position: absolute;
+    margin: auto -10%;
     width: 100%;
     top: -101%;
     transition: 0.5s;
     h2 {
       text-align: left;
     }
-    .inputGroup{
+    .inputGroup {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -218,7 +219,7 @@ a {
 
 $breakpoint-tablet: 769px;
 $breakpoint-mobileL: 426px;
-@media (max-width: $breakpoint-tablet) {
+@media screen and (max-width: $breakpoint-tablet) {
   .landing {
     .landingRight {
       .loginContainer,
@@ -230,14 +231,16 @@ $breakpoint-mobileL: 426px;
       }
     }
     .landingLeft {
-      padding: 12% 1% 8% 6%;
+      .imageBoxes {
+        padding: 15% 0% 15% 10%;
+      }
     }
   }
 }
 
 @media (max-width: $breakpoint-mobileL) {
   .landing {
-    flex-direction: column;
+    // flex-direction: column;
     width: 100%;
     .landingLeft,
     .landingRight {
@@ -246,6 +249,9 @@ $breakpoint-mobileL: 426px;
     }
     .landingLeft {
       display: none;
+    }
+    .salesContainer{
+      margin: auto;
     }
   }
 }
